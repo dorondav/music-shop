@@ -15,6 +15,7 @@ import { DropdownDirective } from './shared/dropdown.directive';
 import { AlbumEditComponent } from './albums/album-edit/album-edit.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FooterComponent } from './components/footer/footer.component';
+import { NewAlbumComponent } from './albums/new-album/new-album.component';
 
 
 
@@ -31,6 +32,7 @@ import { FooterComponent } from './components/footer/footer.component';
     AlbumItemComponent,
     AlbumEditComponent,
     FooterComponent,
+    NewAlbumComponent,
 
   ],
   imports: [

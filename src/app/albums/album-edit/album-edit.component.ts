@@ -30,6 +30,7 @@ export class AlbumEditComponent implements OnInit {
       'albumName': new FormControl(this.album.albumName, Validators.required),
       'artistName': new FormControl(this.album.artistName, Validators.required),
       'imagePath': new FormControl(this.album.imagePath, Validators.required),
+      'genre': new FormControl(this.album.genre, Validators.required),
       'price': new FormControl(this.album.price, [Validators.required,
       Validators.pattern(/^((0?0?\.([1-9]\d*|0[1-9]\d*))|(([1-9]|0[1-9])\d*(\.\d+)?))$/)
       ]),
@@ -39,7 +40,6 @@ export class AlbumEditComponent implements OnInit {
 
   onSubmit() {
     this.albumService.updateAlbum(this.id, this.albumForm.value);
-    console.log(this.albumForm);
     //  this.albumForm.reset();
   }
 }

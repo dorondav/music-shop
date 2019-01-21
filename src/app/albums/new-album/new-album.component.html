@@ -1,31 +1,31 @@
-<div class="col-xl-12">
-  <form [formGroup]="albumForm" (ngSubmit)="onSubmit()">
-
+<div class="container">
+  <form [formGroup]="newAlbumForm" (ngSubmit)="onAddNewAlbum()">
     <div class="form-group">
       <label for="albumName">Album Name:</label>
       <input type="text" formControlName="albumName" class="form-control" id="albumName" name="albumName"
         aria-describedby="albumName">
-      <span class="errorMsg" *ngIf="!albumForm.get('albumName').valid && albumForm.get('albumName').touched">This
+      <span class="errorMsg" *ngIf="!newAlbumForm.get('albumName').valid && newAlbumForm.get('albumName').touched">This
         name is invalid!</span>
 
     </div>
     <div class="form-group">
       <label for="artistName">Artist Name:</label>
       <input type="text" formControlName="artistName" class="form-control" id="artistName" name="artistName">
-      <span class="errorMsg" *ngIf="!albumForm.get('artistName').valid && albumForm.get('artistName').touched">This
+      <span class="errorMsg" *ngIf="!newAlbumForm.get('artistName').valid && newAlbumForm.get('artistName').touched">This
         Artist Name is invalid!</span>
     </div>
     <div class="form-group">
       <label for="genre">Genre:</label>
       <input type="text" formControlName="genre" class="form-control" id="genre" name="genre">
-      <span class="errorMsg" *ngIf="!albumForm.get('genre').valid && albumForm.get('genre').touched"> Please Select
+      <span class="errorMsg" *ngIf="!newAlbumForm.get('genre').valid && newAlbumForm.get('genre').touched"> Please
+        Select
         Music Genre </span>
     </div>
     <div class="col-xs-12">
       <div class="form-group">
         <label for="imagePath">Cover Url:</label>
         <input type="text" formControlName="imagePath" name="imagePath" #imagePath id="imagePath" class="form-control">
-        <span class="errorMsg" *ngIf="!albumForm.get('imagePath').valid && albumForm.get('imagePath').touched">
+        <span class="errorMsg" *ngIf="!newAlbumForm.get('imagePath').valid && newAlbumForm.get('imagePath').touched">
           Please Add Image Path </span>
       </div>
       <div class="col-xs-12">
@@ -36,12 +36,12 @@
       <!-- Date Picker -->
       <label for="releaseDate">Release Date: </label>
       <div class="input-group">
-        <input class="form-control" type="date" formControlName="releaseDate" placeholder="{{album.releaseDate}}" name="releaseDate">
+        <input class="form-control" type="date" formControlName="releaseDate" placeholder="mm/dd/yyyy" name="releaseDate">
         <div class="input-group-append">
           <div class="btn btn-outline-secondary calendar  fa fa-calendar"></div>
         </div>
       </div>
-      <span class="errorMsg" *ngIf="!albumForm.get('releaseDate').valid && albumForm.get('releaseDate').touched">
+      <span class="errorMsg" *ngIf="!newAlbumForm.get('releaseDate').valid && newAlbumForm.get('releaseDate').touched">
         Please Select Realease Date</span>
     </div>
     <!--Price-->
@@ -53,13 +53,13 @@
           <span class="input-group-text">$</span>
         </div>
       </div>
-      <span class="errorMsg" *ngIf="!albumForm.get('price').valid && albumForm.get('price').touched">
+      <span class="errorMsg" *ngIf="!newAlbumForm.get('price').valid && newAlbumForm.get('price').touched">
         Please Set Price</span>
     </div>
 
-    <button type="submit" class="btn btn-danger" [disabled]="!albumForm.valid"><span><img src="https://img.icons8.com/material/24/000000/save-all.png"></span>
-      Save Changes</button>
-    <div class="errorMsg" *ngIf="!albumForm.valid && albumForm.touched">
+    <button type="submit" class="btn btn-danger" [disabled]="!newAlbumForm.valid"><span><img src="https://img.icons8.com/material/24/000000/save-all.png"></span>
+      Save New Album</button>
+    <div class="errorMsg" *ngIf="!newAlbumForm.valid && newAlbumForm.touched">
       Form is not Valid</div>
   </form>
 </div>

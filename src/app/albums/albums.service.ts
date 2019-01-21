@@ -34,9 +34,13 @@ export class AlbumsService {
     return this.albums[index];
   }
 
+  addNewAlbum(album: Album) {
+    this.albums.push(album);
+    this.albumChange.next(this.albums.slice());
+  }
+
   updateAlbum(index: number, newAlbum: Album) {
     this.albums[index] = newAlbum;
-    console.log(JSON.stringify(newAlbum.releaseDate));
     this.albumChange.next(this.albums.slice());
   }
 }
