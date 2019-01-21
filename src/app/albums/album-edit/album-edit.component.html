@@ -1,0 +1,59 @@
+<div class="col-xl-12">
+  <form [formGroup]="albumForm" (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+      <label for="albumName">Album Name:</label>
+      <input type="text" formControlName="albumName" class="form-control" id="albumName" name="albumName"
+        aria-describedby="albumName">
+      <span class="errorMsg" *ngIf="!albumForm.get('albumName').valid && albumForm.get('albumName').touched">This
+        name is invalid!</span>
+
+    </div>
+    <div class="form-group">
+      <label for="artistName">Artist Name:</label>
+      <input type="text" formControlName="artistName" class="form-control" id="artistName" name="artistName">
+      <span class="errorMsg" *ngIf="!albumForm.get('artistName').valid && albumForm.get('artistName').touched">This
+        Artist Name is invalid!</span>
+    </div>
+    <div class="col-xs-12">
+      <div class="form-group">
+        <label for="imagePath">Cover Url:</label>
+        <input type="text" formControlName="imagePath" name="imagePath" #imagePath id="imagePath" class="form-control">
+        <span class="errorMsg" *ngIf="!albumForm.get('imagePath').valid && albumForm.get('imagePath').touched">
+          Please Add Image Path </span>
+      </div>
+      <div class="col-xs-12">
+        <img [src]="imagePath.value" class="img-responsive">
+      </div>
+    </div>
+    <div class="form-group">
+      <!-- Date Picker -->
+      <label for="releaseDate">Release Date: </label>
+      <div class="input-group">
+        <input class="form-control" type="date" formControlName="releaseDate" placeholder="{{album.releaseDate}}" name="releaseDate">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary calendar  fa fa-calendar" (click)="d.toggle()" type="button"></button>
+        </div>
+      </div>
+      <span class="errorMsg" *ngIf="!albumForm.get('releaseDate').valid && albumForm.get('releaseDate').touched">
+        Please Select Realease Date</span>
+    </div>
+    <!--Price-->
+    <div class="form-group">
+      <label for="price">Price:</label>
+      <div class="input-group">
+        <input type="number" class="form-control" formControlName="price" aria-label="Amount (to the nearest dollar)">
+        <div class="input-group-append">
+          <span class="input-group-text">$</span>
+        </div>
+      </div>
+      <span class="errorMsg" *ngIf="!albumForm.get('price').valid && albumForm.get('price').touched">
+        Please Set Price</span>
+    </div>
+
+    <button type="submit" (click)="onSubmit()" class="btn btn-danger" [disabled]="!albumForm.valid"><span><img src="https://img.icons8.com/material/24/000000/save-all.png"></span>
+      Save Changes</button>
+    <div class="errorMsg" *ngIf="!albumForm.valid && albumForm.touched">
+      Form is not Valid</div>
+  </form>
+</div>

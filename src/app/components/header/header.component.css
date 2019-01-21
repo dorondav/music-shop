@@ -1,0 +1,10 @@
+ul>li>.checkout {
+  color: var(--warning-btn-color);
+}
+
+ul>li>.checkout:hover {
+  background: var(--warning-btn-color);
+  color: black;
+  border-radius: 3px;
+
+}

@@ -1,0 +1,11 @@
+<div class="card  border-dark mb-3" style="width: 18rem; cursor: pointer;" [routerLink]="[index]" routerLinkActive="active">
+  <img class="card-img-top imagePath" [src]="album.imagePath" alt="{{ album.albumName }}">
+  <div class="card-body">
+    <h5 class="card-title">{{ album.albumName }}</h5>
+    <h6>{{ album.artistName }}</h6>
+    <span class="badge badge-pill badge-danger">{{album.genre}}</span>
+
+    <p class="card-text">Release: {{album.releaseDate | date : 'yyyy'}}</p>
+    <p class="card-text">Price: {{album.price}}$</p>
+
+  </div>

@@ -1,0 +1,8 @@
+input.ng-invalid.ng-touched,
+textarea.ng-invalid.ng-touched {
+  border: 1px solid var(--danger-btn-color);
+}
+
+.errorMsg {
+  color: var(--danger-btn-color);
+}
