@@ -1,0 +1,34 @@
+<div class="container">
+  <div *ngIf="cart.length >= 1; else msg">
+
+
+    <ul class="product col-md-10" *ngFor="let item of cart; let i = index">
+      <li class="item">
+        <img [src]="item.imagePath" style="max-height: 50px;" class="albumImage" alt="{{item.albumName }}">
+        <div class="albumName">{{item.albumName }}</div>
+        <div class="artist">{{item.artistName}}</div>
+        <div class="price">{{item.price}}$</div>
+        <button class="btn btn-link" (click)="onDeleteItem(index)">Remove </button>
+      </li>
+    </ul>
+  </div>
+  <ng-template #msg>
+    <h1>No items in Shopping list</h1>
+  </ng-template>
+  <div class="btns">
+    <button class="btn btn-warning">purchase</button>
+    <button class="btn btn-secondary" [routerLink]="['/albums']">Cuntinue Shopping </button>
+
+  </div>
+  <!-- <div class="row product col-md-10">
+    <div class="item">
+      <div class="albumImage">X</div>
+      <div class="albumName">albumName</div>
+      <div class="artist">artist</div>
+      <div class="price">100$</div>
+    </div>
+    <div class="product-btn">
+      <div class="btn btn-secondary">Remove</div>
+    </div>
+  </div> -->
+</div>

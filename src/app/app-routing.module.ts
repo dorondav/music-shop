@@ -5,6 +5,7 @@ import { AlbumDetailComponent } from './albums/album-detail/album-detail.compone
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { AlbumEditComponent } from './albums/album-edit/album-edit.component';
 import { NewAlbumComponent } from './albums/new-album/new-album.component';
+import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
@@ -15,7 +16,8 @@ const routes: Routes = [
     ]
   }, {
     path: 'new-album', component: NewAlbumComponent
-  }
+  },
+  { path: 'shopping-list', component: ShoppingListComponent }
 ];
 
 @NgModule({

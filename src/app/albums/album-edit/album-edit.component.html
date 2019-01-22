@@ -61,5 +61,7 @@
       Save Changes</button>
     <div class="errorMsg" *ngIf="!albumForm.valid && albumForm.touched">
       Form is not Valid</div>
+    <button type="button" class="btn btn-secondary" (click)="onCancel()">
+      Cancel </button>
   </form>
 </div>

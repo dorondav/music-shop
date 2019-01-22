@@ -1,0 +1,23 @@
+.product {
+  padding: 1rem;
+  display: flex;
+  border: 1px solid var(--danger-btn-color);
+  border-radius: var(--border);
+}
+
+.item {
+  display: flex;
+  flex-grow: 8;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.item>div {
+  width: 20%;
+  text-align: center;
+  margin: auto;
+}
+
+.product-btn {
+  display: flex;
+}

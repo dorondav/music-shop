@@ -24,7 +24,6 @@ export class AlbumsService {
 
   setAlbums(albums: Album[]) {
     this.albums = albums;
-    console.log(this.albums);
 
   }
   getAlbums() {
@@ -42,5 +41,10 @@ export class AlbumsService {
   updateAlbum(index: number, newAlbum: Album) {
     this.albums[index] = newAlbum;
     this.albumChange.next(this.albums.slice());
+  }
+  deleteAlbum(index: number) {
+    this.albums.splice(index, 1);
+    this.albumChange.next(this.albums.slice());
+
   }
 }

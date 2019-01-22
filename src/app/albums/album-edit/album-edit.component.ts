@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Album } from '../album.model';
 import { AlbumsService } from '../albums.service';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 
 @Component({
   selector: 'app-album-edit',
@@ -13,7 +13,10 @@ export class AlbumEditComponent implements OnInit {
   album: Album;
   albumForm: FormGroup;
   id: number;
-  constructor(private albumService: AlbumsService, private route: ActivatedRoute) { }
+  constructor(
+    private albumService: AlbumsService,
+    private route: ActivatedRoute,
+    private router: Router) { }
 
   ngOnInit() {
     this.route.params.subscribe(
@@ -41,5 +44,8 @@ export class AlbumEditComponent implements OnInit {
   onSubmit() {
     this.albumService.updateAlbum(this.id, this.albumForm.value);
     //  this.albumForm.reset();
+  }
+  onCancel() {
+    this.router.navigate(['/albums']);
   }
 }

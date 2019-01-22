@@ -16,6 +16,9 @@ import { AlbumEditComponent } from './albums/album-edit/album-edit.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FooterComponent } from './components/footer/footer.component';
 import { NewAlbumComponent } from './albums/new-album/new-album.component';
+import { ShoppingListComponent } from './shopping-list/shopping-list.component';
+import { ShoppingCartComponent } from './shopping-list/shopping-cart/shopping-cart.component';
+import { CheckoutComponent } from './shopping-list/checkout/checkout.component';
 
 
 
@@ -33,6 +36,9 @@ import { NewAlbumComponent } from './albums/new-album/new-album.component';
     AlbumEditComponent,
     FooterComponent,
     NewAlbumComponent,
+    ShoppingListComponent,
+    ShoppingCartComponent,
+    CheckoutComponent,
 
   ],
   imports: [
