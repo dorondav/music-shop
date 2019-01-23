@@ -43,7 +43,6 @@ export class AlbumEditComponent implements OnInit {
 
   onSubmit() {
     this.albumService.updateAlbum(this.id, this.albumForm.value);
-    //  this.albumForm.reset();
   }
   onCancel() {
     this.router.navigate(['/albums']);

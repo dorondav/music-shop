@@ -47,4 +47,9 @@ export class AlbumDetailComponent implements OnInit {
   onAddAlbumToSl() {
     this.shoppingLs.addAlbumToShoppingListArray(this.album);
   }
+
+  onCheckout() {
+    this.onAddAlbumToSl();
+    this.router.navigate(['/shopping-list']);
+  }
 }
